@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>[DG-Kernel-Load]</displayName>
+<description/>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/sh&#13;
+&#13;
+loaded=$(kextstat | grep com.verdasys | awk '{ print $7 }' | tr -d '()' | awk -F\. '{ print $1 }' | wc -l | tr -d ' ')&#13;
+&#13;
+if [ $loaded == 0 ]; then&#13;
+echo "&lt;result&gt;No&lt;/result&gt;"&#13;
+else&#13;
+echo "&lt;result&gt;Yes&lt;/result&gt;"&#13;
+fi&#13;
+</scriptContentsMac>
+<scriptContentsWindows/>
+</extensionAttribute>

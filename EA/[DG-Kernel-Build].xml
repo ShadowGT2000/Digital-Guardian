@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>[DG-Kernel-Build]</displayName>
+<description/>
+<dataType>number</dataType>
+<scriptContentsMac>#!/bin/sh&#13;
+&#13;
+result=$(kextstat | grep com.verdasys | awk '{ print $7 }' | tr -d '()' | awk -F\. '{ print $1 }')&#13;
+echo "&lt;result&gt;$result&lt;/result&gt;"</scriptContentsMac>
+<scriptContentsWindows/>
+</extensionAttribute>
